@@ -11,8 +11,10 @@ add_library(imgui STATIC
 
 target_include_directories(imgui PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-# Optional: backends (uncomment as needed)
-# target_sources(imgui PRIVATE
-#     backends/imgui_impl_glfw.cpp
-#     backends/imgui_impl_opengl3.cpp
-# )
+# Backends
+target_sources(imgui PRIVATE
+    backends/imgui_impl_glfw.cpp
+    backends/imgui_impl_opengl3.cpp
+)
+
+target_include_directories(imgui PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/backends)
